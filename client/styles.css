@@ -1,10 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 
-body {
-  margin-top: 15px;
-  margin-bottom: 10px;
-}
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~ng-pick-datetime/assets/style/picker.min.css";
 
 .input-group {
   margin-bottom: 15px;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 80%;
+}
+
+.collapse-row.collapsed + tr {
+}
+
+.custom {
+  min-width: 200px;
 }

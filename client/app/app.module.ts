@@ -18,6 +18,17 @@ import { AccountComponent } from './account/account.component';
 import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
+import { NgSelectModule } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
+
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {MatTableModule, MatSortModule, MatPaginatorModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatFormFieldModule,MatExpansionModule, MatSelectModule} from '@angular/material';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+
+
 export function tokenGetter() {
   return localStorage.getItem('token');
 }
@@ -37,6 +48,22 @@ export function tokenGetter() {
   imports: [
     RoutingModule,
     SharedModule,
+    NgSelectModule,
+    BrowserModule,
+    MatExpansionModule,
+        BrowserAnimationsModule,
+     FormsModule,
+     NoopAnimationsModule,
+     MatTableModule,
+     MatSortModule,
+     MatInputModule,
+     MatNativeDateModule,
+     MatPaginatorModule,
+     MatSelectModule,
+     MatDatepickerModule,
+     MatFormFieldModule,
+     OwlDateTimeModule,
+      OwlNativeDateTimeModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
