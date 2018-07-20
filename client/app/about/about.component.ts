@@ -129,12 +129,9 @@ dataSource = new MatTableDataSource(this.localData);
         pstartDate: '',
         taskData: []
 
-
+}
     )
     console.log(this.localData)
-      this.dataSource = new MatTableDataSource(this.localData);
-
-    this.table.renderRows();
 
   }
 

@@ -77,9 +77,9 @@
       <div class="col">
       </div>
       <div class="col form-inline" style='padding:10px;'>
-      <tr><td><label for="dt3">Project StartDate : </label></td><td><input [owlDateTime]="dt3" [owlDateTimeTrigger]="dt3" style="" [(ngModel)]='model.pstartDate' placeholder="Choose Start Date">
+      <!-- <tr><td><label for="dt3">Project StartDate : </label></td><td><input [owlDateTime]="dt3" [owlDateTimeTrigger]="dt3" style="" [(ngModel)]='model.pstartDate' placeholder="Choose Start Date">
       <owl-date-time #dt1></owl-date-time>
-</td></tr>
+</td></tr> -->
       </div>
       <div class="col" style='padding:10px;'>
         <button (click)="addPhase()" style='margin-left:10px;' type="submit" class="btn btn-primary">Add Phase</button>
@@ -90,7 +90,7 @@
 </div>
 
 
-<div >
+<div style="max-width: 100%" >
   <table class="table table-hover">
     <thead>
       <th *ngFor="let heading of displayedColumns"> {{heading}}</th>
@@ -179,9 +179,30 @@
             </mat-form-field>
           </td>
           <td>
-            <button style ="margin-left:3px" class="btn btn-sm btn-primary" >Settings</button>
+            <button style="margin: 10px " mat-icon-button>
+              <mat-icon>clear</mat-icon>
+              <span>Delete</span>
 
-            <button  style ="margin-left:3px" class="btn btn-sm btn-danger" >Delete</button>
+            </button>
+
+              <button style="margin: 10px " mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                  <mat-icon>add</mat-icon>
+                  <span>Insert Task Above</span>
+                </button>
+                <button mat-menu-item disabled>
+                  <mat-icon>add</mat-icon>
+                  <span>Insert Task Below </span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>import_export</mat-icon>
+                  <span>Change Phase</span>
+                </button>
+              </mat-menu>
+
           </td>
         </tr>
       </ng-container>
